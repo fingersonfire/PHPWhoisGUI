@@ -1,11 +1,6 @@
 <?php
-/*************************************************************************
-php easy :: whois lookup script
-==========================================================================
-Author:      php easy code, www.phpeasycode.com
-Web Site:    http://www.phpeasycode.com
-Contact:     webmaster@phpeasycode.com
-*************************************************************************/
+
+include('./lib/phpwhois/whois.main.php');
 
 $domain = $_GET['domain'];
 
@@ -370,8 +365,8 @@ function QueryWhoisServer($whoisserver, $domain) {
 <title>WhoIs Lookup</title>
  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <link rel="stylesheet" type="text/css" href="reset.css">
- <link rel="stylesheet" type="text/css" href="style.css">
+ <link rel="stylesheet" type="text/css" href="./style/reset.css">
+ <link rel="stylesheet" type="text/css" href="./style/simple/main.css">
 </head>
 
 <body>
@@ -397,10 +392,15 @@ function QueryWhoisServer($whoisserver, $domain) {
 			$result = LookupIP($domain);
 		}
 		elseif(ValidateDomain($domain)) {
-			$result = LookupDomain($domain);
+			//$result = LookupDomain($domain);
+			$whois = new Whois();
+			$result = $whois->Lookup($domain,false);
+			
 		}
 		else die("<div class=\"error\">There has been an error...</div>\n");
-		echo "<div class=\"result\"><pre>\n" . $result . "\n</pre></div>\n";
+		echo "<div class=\"result\">\n";
+		echo '<pre>'.implode($result['rawdata'],"\n").'</pre>';
+		echo "\n</div>\n";
 	}
 	?>
 
