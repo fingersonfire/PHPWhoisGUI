@@ -1,0 +1,122 @@
+body {
+	  background-color: rgba(232, 236, 241, 1);  
+}
+
+#page-wrapper {
+	padding : 10px;
+}
+
+/* ===========================
+   ====== Search Box ====== 
+   =========================== */
+
+.search
+{
+  outline: 0;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  overflow: auto;
+  -moz-border-radius: 5px;
+  background-color: white;
+  margin-bottom : 30px;
+}
+
+.search input[type="text"]
+{
+	border: 0px;
+	width: 90%;	
+	padding: 10px 10px;
+	font-size: 18px;
+}
+
+.search input[type="text"]:focus
+{
+	outline: 0;
+}
+
+.search input[type="submit"]
+{
+	border: 0px;
+	background: none;
+  background-color: rgba(38, 50, 56, 0.8);
+	color: #fff;
+	float: right;
+	padding: 10px;
+  text-rendering: auto;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+	border-radius-top-right: 5px;
+	-moz-border-radius-top-right: 5px;
+	-webkit-border-radius-top-right: 5px;
+	border-radius-bottom-right: 5px;
+	-moz-border-radius-bottom-right: 5px;
+	-webkit-border-radius-bottom-right: 5px;
+  cursor:pointer;
+  -webkit-transition: background-color .4s ease;
+  transition: background-color .4s ease;
+  font-size: 18px;
+}
+
+.search input[type="submit"]:hover {
+  background-color: rgba(0, 150, 136, 0.8);
+}
+
+/* ===========================
+   ====== Medua Query for Search Box ====== 
+   =========================== */
+
+@media only screen and (min-width : 150px) and (max-width : 780px)
+{
+	{}
+	.search
+	{
+		margin-bottom : 10px;
+	}
+
+	.search input[type="text"]
+	{
+		width: 75%;	
+	}
+	
+	.result
+	{
+	}
+
+}
+
+/* ===========================
+====== Result ====== 
+=========================== */
+.result {
+  outline: 0;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  padding: 16px;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #212121;
+}
+
+.result pre {
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	overflow: auto;
+	overflow-y: hidden;
+	font-size: 18px;
+	line-height: 18px;
+}
+
+.error {
+  outline: 0;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  padding: 16px;
+  background-color: #FFBABA;
+  color: #D8000C;
+  font-size: 22px;
+}
