@@ -7,12 +7,12 @@
  <link rel="stylesheet" type="text/css" href="[onshow..template_path]style/main.css">
 </head>
 
-<body>
+<body OnLoad="document.search.q.focus();">
 
 <div id="page-wrapper">
 
 <div class="search">
-	<form action="[onshow..script_name]">
+	<form name="search" action="[onshow..script_name]">
 		<input type="text" name="q" class="searchbox" placeholder="Search" value="">
 		<input type="submit" class="searchbutton" value="&#x1F50D;">
 	</form>
