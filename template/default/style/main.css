@@ -127,3 +127,16 @@ h1 {
   color: #D8000C;
   font-size: 22px;
 }
+
+.resultdomain {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+}
+
+
+.resultdomain div {
+  width: 175px;  
+  height: 75px; 
+  margin: auto; 
+}
