@@ -26,7 +26,7 @@ h1 {
 	-moz-border-radius: 5px;
 	background-color: white;
 	margin-bottom : 20px;
-	margin-top : 10px;
+	margin-top : 50px;
 }
 
 .search input[type="text"] {
@@ -77,6 +77,9 @@ h1 {
 	
 	.search {
 		margin-bottom : 5px;
+		margin-top : 10px;
+		margin-left : 10px;
+		margin-right : 10px;
 	}
 
 	.search input[type="text"] {
@@ -84,6 +87,8 @@ h1 {
 	}
 	
 	.result {
+		margin-left : 10px;
+		margin-right : 10px;
 	}
 
 }
@@ -131,8 +136,8 @@ h1 {
 
 
 .resultdomain div {
-	width: 175px;  
-	height: 100px; 
+	width: 200px;  
+	height: 125px; 
 	margin: auto; 
 	position: relative;
 	margin-bottom : 5px;
@@ -140,8 +145,6 @@ h1 {
 
 .resultdomain div span.boxtitle {
 	display: block;
-	position: absolute;
-	bottom: 0;
 	width: 100%;
 	font-size: 150%;
 	text-align : center;
