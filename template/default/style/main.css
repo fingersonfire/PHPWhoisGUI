@@ -1,9 +1,10 @@
 body {
-	  background-color: rgba(232, 236, 241, 1);  
+	background-color: rgba(232, 236, 241, 1);  
 }
 
 #page-wrapper {
-	padding : 10px;
+	width : 740px;
+	margin: 0 auto;
 }
 
 h1 {
@@ -13,97 +14,91 @@ h1 {
 	text-transform: uppercase;
 }
 
-/* ===========================
-   ====== Search Box ====== 
-   =========================== */
+/* Search Box  */
 
-.search
-{
-  outline: 0;
-  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-  overflow: auto;
-  -moz-border-radius: 5px;
-  background-color: white;
-  margin-bottom : 30px;
+.search {
+	outline: 0;
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	overflow: auto;
+	-moz-border-radius: 5px;
+	background-color: white;
+	margin-bottom : 20px;
+	margin-top : 10px;
 }
 
-.search input[type="text"]
-{
+.search input[type="text"] {
 	border: 0px;
 	width: 90%;	
 	padding: 10px 10px;
 	font-size: 18px;
 }
 
-.search input[type="text"]:focus
-{
+.search input[type="text"]:focus {
 	outline: 0;
 }
 
-.search input[type="submit"]
-{
+.search input[type="submit"] {
 	border: 0px;
 	background: none;
-  background-color: rgba(38, 50, 56, 0.8);
+	background-color: rgba(38, 50, 56, 0.8);
 	color: #fff;
 	float: right;
 	padding: 10px;
-  text-rendering: auto;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+	text-rendering: auto;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 	border-radius-top-right: 5px;
 	-moz-border-radius-top-right: 5px;
 	-webkit-border-radius-top-right: 5px;
 	border-radius-bottom-right: 5px;
 	-moz-border-radius-bottom-right: 5px;
 	-webkit-border-radius-bottom-right: 5px;
-  cursor:pointer;
-  -webkit-transition: background-color .4s ease;
-  transition: background-color .4s ease;
-  font-size: 18px;
+	cursor:pointer;
+	-webkit-transition: background-color .4s ease;
+	transition: background-color .4s ease;
+	font-size: 18px;
 }
 
 .search input[type="submit"]:hover {
   background-color: rgba(0, 150, 136, 0.8);
 }
 
-/* ===========================
-   ====== Medua Query for Search Box ====== 
-   =========================== */
+/* Media Query for Search Box */
 
-@media only screen and (min-width : 150px) and (max-width : 780px)
-{
+@media only screen and (min-width : 150px) and (max-width : 780px) {
 	{}
-	.search
-	{
-		margin-bottom : 10px;
+	
+	#page-wrapper{
+		width : 100%;
+		margin: 0;
+	}
+	
+	.search {
+		margin-bottom : 5px;
 	}
 
-	.search input[type="text"]
-	{
+	.search input[type="text"] {
 		width: 75%;	
 	}
 	
-	.result
-	{
+	.result {
 	}
 
 }
 
-/* ===========================
-====== Result ====== 
-=========================== */
+/* Result */
+
 .result {
-  outline: 0;
-  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  -webkit-border-radius: 4px;
-  border-radius: 4px;
-  padding: 16px;
-  background-color: rgba(255, 255, 255, 0.8);
-  color: #212121;
+	outline: 0;
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	padding: 16px;
+	background-color: rgba(255, 255, 255, 0.8);
+	color: #212121;
 }
 
 .result pre {
@@ -113,19 +108,19 @@ h1 {
 	overflow: auto;
 	overflow-y: hidden;
 	font-size: 18px;
-	line-height: 18px;
+	line-height: 10px;
 }
 
 .error {
-  outline: 0;
-  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  -webkit-border-radius: 4px;
-  border-radius: 4px;
-  padding: 16px;
-  background-color: #FFBABA;
-  color: #D8000C;
-  font-size: 22px;
+	outline: 0;
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	padding: 16px;
+	background-color: #FFBABA;
+	color: #D8000C;
+	font-size: 22px;
 }
 
 .resultdomain {
@@ -136,7 +131,27 @@ h1 {
 
 
 .resultdomain div {
-  width: 175px;  
-  height: 75px; 
-  margin: auto; 
+	width: 175px;  
+	height: 100px; 
+	margin: auto; 
+	position: relative;
+	margin-bottom : 5px;
+}
+
+.resultdomain div span.boxtitle {
+	display: block;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	font-size: 150%;
+	text-align : center;
+	background-color: rgba(232, 236, 241, 1); 
+}
+
+.resultdomain div span.boxcontent {
+	display: block;
+	width: 100%;
+	height: 100%;
+	font-size: 170%;
+	text-align : center;
 }
