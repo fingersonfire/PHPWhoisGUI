@@ -2,9 +2,7 @@
 A Quick and Dirty script to search whois databases.
 
 ## Requirements
-- PHP 7.x
-
-PHP 8.x not yet supported. Some code ajustment required (implode function has been removed inv8.x)
+- PHP 7 or 8
 
 ## Installation
 Upload the code and you should be good to go.
