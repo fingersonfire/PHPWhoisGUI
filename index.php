@@ -17,10 +17,12 @@ $templatelocation = './template/default/';
 
 // Initialsation 
 $TBS = new clsTinyButStrong;
-$query = $_GET['q'];
 
-if(isset($query) && $query != "") {
 
+if(isset($_GET['q']) && $_GET['q'] != "") {
+
+	$query = $_GET['q'];
+	
 	$query = cleanupQuery($query);	
 	$whois = new Whois();
 	$result = $whois->Lookup($query,false);
