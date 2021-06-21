@@ -28,13 +28,13 @@ if(isset($_GET['q']) && $_GET['q'] != "") {
 	$result = $whois->Lookup($query,false);
 		
 	if ($whois->Query['status'] == 'error'){
-		$whoisError = implode($whois->Query['errstr'],"\n");
+		$whoisError = implode("\n",$whois->Query['errstr']);
 		$TBS->LoadTemplate($templatelocation.'showerror.html');
 		$TBS->Show();
 	}
 	else{	
 		if($whois->Query['tld'] == 'ip' || $whois->Query['tld'] == 'as'){
-				$rawdata = implode($result['rawdata'],"\n");
+				$rawdata = implode("\n",$result['rawdata']);
 				$TBS->LoadTemplate($templatelocation.'showrawdata.html');
 				$TBS->Show();
 		}
@@ -44,7 +44,7 @@ if(isset($_GET['q']) && $_GET['q'] != "") {
 				$registrar = $result['regyinfo']['registrar'];
 				$domaincreation = $result['regrinfo']['domain']['created'];
 				$domainupdate = $result['regrinfo']['domain']['changed'];
-				$nameservers = implode($result['regrinfo']['domain']['nserver'],"\n");
+				$nameservers = implode("\n",$result['regrinfo']['domain']['nserver']);
 				$TBS->LoadTemplate($templatelocation.'showdomain.html');
 				$TBS->Show();
 			}
