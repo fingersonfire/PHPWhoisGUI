@@ -3,6 +3,7 @@
 include('./vendor/phpwhois/whois.main.php');
 include_once('./vendor/tinybutstrong/tbs_class.php');
 
+// Functions
 function cleanupQuery($query) {
 	$queryclean = trim($query);
 	if(substr(strtolower($queryclean), 0, 7) == "http://") $queryclean = substr($query, 7);
@@ -11,6 +12,20 @@ function cleanupQuery($query) {
 	
 	return $queryclean;
 } 
+
+function implode_nserver($arraykv){
+	return implode("\n", array_map(
+		function ($v, $k) {
+			if(is_array($v)){
+				return $k.'[]='.implode('&'.$k.'[]=', $v);
+			}else{
+				return $k.' ('.$v.')';
+			}
+		}, 
+		$arraykv, 
+		array_keys($arraykv)
+	));
+}
 
 // Global Variables
 $templatelocation = './template/default/';
@@ -48,7 +63,7 @@ if(isset($_GET['q']) && $_GET['q'] != "") {
 				$registrar = (isset($result['regyinfo']['registrar'])) ? $result['regyinfo']['registrar'] : $missingdatamessage;
 				$domaincreation = (isset($result['regrinfo']['domain']['created'])) ? $result['regrinfo']['domain']['created'] : $missingdatamessage;
 				$domainupdate = (isset($result['regrinfo']['domain']['changed'])) ? $result['regrinfo']['domain']['changed'] : $missingdatamessage;
-				$nameservers = (isset($result['regrinfo']['domain']['nserver'])) ? implode("\n",$result['regrinfo']['domain']['nserver']) : $missingdatamessage;
+				$nameservers = (isset($result['regrinfo']['domain']['nserver'])) ? implode_nserver($result['regrinfo']['domain']['nserver']) : $missingdatamessage;
 				$TBS->LoadTemplate($templatelocation.'showdomain.html');
 				$TBS->Show();
 			}
