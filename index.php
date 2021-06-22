@@ -12,8 +12,9 @@ function cleanupQuery($query) {
 	return $queryclean;
 } 
 
-// Customization
+// Global Variables
 $templatelocation = './template/default/';
+$showrawdata = array('ip', 'as', 'ch');
 
 // Initialsation 
 $TBS = new clsTinyButStrong;
@@ -32,13 +33,15 @@ if(isset($_GET['q']) && $_GET['q'] != "") {
 		$TBS->LoadTemplate($templatelocation.'showerror.html');
 		$TBS->Show();
 	}
-	else{	
-		if($whois->Query['tld'] == 'ip' || $whois->Query['tld'] == 'as'){
+	else{
+		// Show RAW data based on global array
+		if(in_array($whois->Query['tld'], $showrawdata)){
 				$rawdata = implode("\n",$result['rawdata']);
 				$TBS->LoadTemplate($templatelocation.'showrawdata.html');
 				$TBS->Show();
 		}
 		else {
+
 			if($result['regrinfo']['registered'] == 'yes'){
 				$domainname = $result['regrinfo']['domain']['name'];
 				$registrar = $result['regyinfo']['registrar'];
