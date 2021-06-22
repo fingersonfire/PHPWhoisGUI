@@ -1,5 +1,6 @@
 body {
-	background-color: rgba(232, 236, 241, 1);  
+	background-color: rgba(232, 236, 241, 1);
+	font-family:  Helvetica, Arial, sans-serif;
 }
 
 #page-wrapper {
@@ -20,8 +21,8 @@ h1 {
 	outline: 0;
 	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-	-webkit-border-radius: 5px;
-	border-radius: 5px;
+	-webkit-border-radius: 15px;
+	border-radius: 15px;
 	overflow: auto;
 	-moz-border-radius: 5px;
 	background-color: white;
@@ -49,12 +50,6 @@ h1 {
 	padding: 10px;
 	text-rendering: auto;
 	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-	border-radius-top-right: 5px;
-	-moz-border-radius-top-right: 5px;
-	-webkit-border-radius-top-right: 5px;
-	border-radius-bottom-right: 5px;
-	-moz-border-radius-bottom-right: 5px;
-	-webkit-border-radius-bottom-right: 5px;
 	cursor:pointer;
 	-webkit-transition: background-color .4s ease;
 	transition: background-color .4s ease;
@@ -99,9 +94,9 @@ h1 {
 	outline: 0;
 	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-	-webkit-border-radius: 4px;
-	border-radius: 4px;
-	padding: 16px;
+	-webkit-border-radius: 15px;
+	border-radius: 15px;
+	padding: 15px;
 	background-color: rgba(255, 255, 255, 0.8);
 	color: #212121;
 }
@@ -120,9 +115,9 @@ h1 {
 	outline: 0;
 	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-	-webkit-border-radius: 4px;
-	border-radius: 4px;
-	padding: 16px;
+	-webkit-border-radius: 15px;
+	border-radius: 15px;
+	padding: 15px;
 	background-color: #FFBABA;
 	color: #D8000C;
 	font-size: 22px;
@@ -136,25 +131,27 @@ h1 {
 
 
 .resultdomain div {
-	width: 200px;  
-	height: 125px; 
+	width: 400px;  
 	margin: auto; 
 	position: relative;
-	margin-bottom : 5px;
 }
 
 .resultdomain div span.boxtitle {
 	display: block;
 	width: 100%;
 	font-size: 150%;
-	text-align : center;
+	text-align : left;
 	background-color: rgba(232, 236, 241, 1); 
+	padding : 10px;
+	border-radius: 15px;
+	-webkit-border-radius: 15px;
 }
 
 .resultdomain div span.boxcontent {
 	display: block;
 	width: 100%;
 	height: 100%;
-	font-size: 170%;
+	font-size: 120%;
 	text-align : center;
+	padding: 10px 0;
 }
