@@ -14,7 +14,8 @@ function cleanupQuery($query) {
 
 // Global Variables
 $templatelocation = './template/default/';
-$showrawdata = array('ip', 'as', 'ch');
+$showrawdata = array('ip', 'as');
+$missingdatamessage = "Unknown";
 
 // Initialsation 
 $TBS = new clsTinyButStrong;
@@ -43,11 +44,11 @@ if(isset($_GET['q']) && $_GET['q'] != "") {
 		else {
 
 			if($result['regrinfo']['registered'] == 'yes'){
-				$domainname = $result['regrinfo']['domain']['name'];
-				$registrar = $result['regyinfo']['registrar'];
-				$domaincreation = $result['regrinfo']['domain']['created'];
-				$domainupdate = $result['regrinfo']['domain']['changed'];
-				$nameservers = implode("\n",$result['regrinfo']['domain']['nserver']);
+				$domainname = (isset($result['regrinfo']['domain']['name'])) ? $result['regrinfo']['domain']['name'] : $missingdatamessage;
+				$registrar = (isset($result['regyinfo']['registrar'])) ? $result['regyinfo']['registrar'] : $missingdatamessage;
+				$domaincreation = (isset($result['regrinfo']['domain']['created'])) ? $result['regrinfo']['domain']['created'] : $missingdatamessage;
+				$domainupdate = (isset($result['regrinfo']['domain']['changed'])) ? $result['regrinfo']['domain']['changed'] : $missingdatamessage;
+				$nameservers = (isset($result['regrinfo']['domain']['nserver'])) ? implode("\n",$result['regrinfo']['domain']['nserver']) : $missingdatamessage;
 				$TBS->LoadTemplate($templatelocation.'showdomain.html');
 				$TBS->Show();
 			}
